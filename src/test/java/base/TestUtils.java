@@ -44,7 +44,7 @@ public class TestUtils {
                 createChromeDriver(url, implicitWait);
                 break;
             case "firefox":
-                createFirefoxDriver(url, implicitWait);
+                createEdgeDriver(url, implicitWait);
                 break;
             default:
                 throw new IllegalStateException("Unsupported browser type");
@@ -62,7 +62,7 @@ public class TestUtils {
         loadUrl(url);
     }
 
-    private void createFirefoxDriver(String url, int implicitWait){
+    private void createEdgeDriver(String url, int implicitWait){
         WebDriverManager.edgedriver().setup();
         driver = new EdgeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(implicitWait));
