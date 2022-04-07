@@ -12,7 +12,7 @@ import java.time.Duration;
 import java.util.Collections;
 
 public class LoginPage {
-    protected WebDriver driver;
+    public WebDriver driver;
 
     @FindBy(id = "user-name")
     private WebElement userNameInput;

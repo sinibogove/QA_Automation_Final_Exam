@@ -14,7 +14,7 @@ import java.time.Duration;
 import java.util.Collections;
 
 public class ProductsPage {
-    protected WebDriver driver;
+    public WebDriver driver;
     private static final String ADD_TO_CART_LOCATOR = "//button[@id='add-to-cart-sauce-labs-%s']";
 
     @FindBy(className = "shopping_cart_link")
