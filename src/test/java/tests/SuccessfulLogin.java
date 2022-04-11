@@ -2,7 +2,6 @@ package tests;
 
 import base.TestUtils;
 import com.opencsv.exceptions.CsvException;
-import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pages.LoginPage;
@@ -13,7 +12,7 @@ import java.io.IOException;
 
 public class SuccessfulLogin extends TestUtils {
 
-    @DataProvider(name = "validUsers")
+    @DataProvider(name = "SuccessfulLogin")
     public static Object[][] readUsersFromCsvFile() throws IOException, CsvException {
         return CsvHelper.readCsvFile("src/test/resources/validUsers.csv");
     }
