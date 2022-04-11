@@ -14,7 +14,7 @@ import java.time.Duration;
 import java.util.Collections;
 
 public class ProductsPage {
-    public WebDriver driver;
+    protected WebDriver driver;
     private static final String ADD_TO_CART_LOCATOR = "//button[@id='add-to-cart-sauce-labs-%s']";
 
     @FindBy(className = "shopping_cart_link")
@@ -24,7 +24,7 @@ public class ProductsPage {
     private WebElement shoppingCartCounter;
 
     @FindBy(id = "react-burger-menu-btn")
-    private WebElement userAllPagesButton;
+    private WebElement reactBurgerMenuButton;
 
     @FindBy(css = "[class=shopping_cart_link]")
     private WebElement shoppingCart;
@@ -34,16 +34,15 @@ public class ProductsPage {
         PageFactory.initElements(driver, this);
     }
 
-    public void userAllPagesButton (){
+    public void reactBurgerMenuButton (){
 
-        //fluent wait
         FluentWait fluentWait = new FluentWait(driver)
                 .withTimeout(Duration.ofSeconds(20))
                 .pollingEvery(Duration.ofSeconds(2))
                 .ignoreAll(Collections.singleton(NoSuchElementException.class));
 
-        fluentWait.until(ExpectedConditions.elementToBeClickable(userAllPagesButton));
-        Assert.assertTrue(userAllPagesButton.isDisplayed());
+        fluentWait.until(ExpectedConditions.elementToBeClickable(reactBurgerMenuButton));
+        Assert.assertTrue(reactBurgerMenuButton.isDisplayed());
     }
 
     public void addItemToTheCart(String productName){

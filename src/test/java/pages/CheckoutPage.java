@@ -12,7 +12,7 @@ import java.time.Duration;
 import java.util.Collections;
 
 public class CheckoutPage {
-    public WebDriver driver;
+    protected WebDriver driver;
 
     @FindBy(css = "[id=first-name]")
     private WebElement firstName;

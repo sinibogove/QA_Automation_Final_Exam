@@ -43,7 +43,7 @@ public class TestUtils {
             case "chrome":
                 createChromeDriver(url, implicitWait);
                 break;
-            case "firefox":
+            case "edge":
                 createEdgeDriver(url, implicitWait);
                 break;
             default:
