@@ -22,6 +22,5 @@ public class SuccessfulLogin extends TestUtils {
         LoginPage loginPage = new LoginPage(driver);
         ProductsPage productsPage = loginPage.login(userName, password);
         productsPage.reactBurgerMenuButton();
-
     }
 }
