@@ -30,7 +30,6 @@ public class LoginPage {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
-
     public ProductsPage login(String username, String password){
 
         FluentWait fluentWait = new FluentWait(driver)

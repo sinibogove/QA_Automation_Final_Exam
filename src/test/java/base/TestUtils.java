@@ -20,11 +20,13 @@ public class TestUtils {
 
     @BeforeMethod
     public void setUp(){
+
         setupBrowserDriver();
     }
 
     @AfterMethod
     public void tearDown(){
+
         driver.quit();
     }
 
