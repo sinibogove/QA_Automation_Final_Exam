@@ -31,7 +31,7 @@ public class CheckoutPage {
         PageFactory.initElements(driver, this);
     }
 
-    public OverviewPage Checkout(){
+    public CheckoutOverviewPage Checkout(){
 
         FluentWait fluentWait = new FluentWait(driver)
                 .withTimeout(Duration.ofSeconds(20))
@@ -53,6 +53,6 @@ public class CheckoutPage {
         fluentWait.until(ExpectedConditions.elementToBeClickable(submitBtn));
         submitBtn.click();
 
-        return new OverviewPage(driver);
+        return new CheckoutOverviewPage(driver);
     }
 }

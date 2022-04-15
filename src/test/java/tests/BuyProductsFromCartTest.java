@@ -22,9 +22,9 @@ public class BuyProductsFromCartTest extends TestUtils {
         LoginPage loginPage = new LoginPage(driver);
         ProductsPage productsPage = loginPage.login(userName, password);
 
-        CartPage cartPage = new CartPage(driver);
+        YourCartPage cartPage = new YourCartPage(driver);
         CheckoutPage checkoutPage = new CheckoutPage(driver);
-        OverviewPage overviewPage = new OverviewPage(driver);
+        CheckoutOverviewPage overviewPage = new CheckoutOverviewPage(driver);
         CompleteOrderPage completeOrderPage = new CompleteOrderPage(driver);
 
         productsPage.addItemToTheCart(product1);

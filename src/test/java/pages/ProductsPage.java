@@ -9,7 +9,6 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.testng.Assert;
-import org.testng.asserts.SoftAssert;
 
 import java.time.Duration;
 import java.util.Collections;
@@ -52,10 +51,8 @@ public class ProductsPage {
     public int getItemsInTheCart(){
 
         return Integer.parseInt(shoppingCartCounter.getText());
-
     }
-
-    public CartPage MoveToCheckoutPage(){
+    public YourCartPage MoveToCheckoutPage(){
 
         FluentWait fluentWait = new FluentWait(driver)
                 .withTimeout(Duration.ofSeconds(20))
@@ -65,6 +62,6 @@ public class ProductsPage {
         fluentWait.until(ExpectedConditions.elementToBeClickable(shoppingCart));
         shoppingCart.click();
 
-        return new CartPage(driver);
+        return new YourCartPage(driver);
     }
 }

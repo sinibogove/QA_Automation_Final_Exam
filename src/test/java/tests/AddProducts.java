@@ -5,6 +5,7 @@ import com.opencsv.exceptions.CsvException;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 import pages.LoginPage;
 import pages.ProductsPage;
 import utils.CsvHelper;
@@ -29,8 +30,6 @@ public class AddProducts extends TestUtils {
         productsPage.getItemsInTheCart();
 
         Assert.assertEquals(productsPage.getItemsInTheCart(), 2,
-                "Because we have added two item in the cart.");
-
+                ("Because we have added two item in the cart."));
     }
-
 }

@@ -11,27 +11,27 @@ import org.openqa.selenium.support.ui.FluentWait;
 import java.time.Duration;
 import java.util.Collections;
 
-public class CartPage {
+public class CheckoutOverviewPage {
     protected WebDriver driver;
 
-    @FindBy(css = "[id=checkout]")
-    private WebElement checkout;
+    @FindBy(css = "[id=finish]")
+    private WebElement finishBtn;
 
-    public CartPage(WebDriver driver){
+    public CheckoutOverviewPage(WebDriver driver){
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
 
-    public CartPage Checkout(){
+    public CompleteOrderPage Checkout(){
 
         FluentWait fluentWait = new FluentWait(driver)
                 .withTimeout(Duration.ofSeconds(20))
                 .pollingEvery(Duration.ofSeconds(2)) //how often it will be checked for the presence of the element
                 .ignoreAll(Collections.singleton(NoSuchElementException.class));
 
-        fluentWait.until(ExpectedConditions.elementToBeClickable(checkout));
-        checkout.click();
+        fluentWait.until(ExpectedConditions.elementToBeClickable(finishBtn));
+        finishBtn.click();
 
-        return new CartPage(driver);
+        return new CompleteOrderPage(driver);
     }
 }
