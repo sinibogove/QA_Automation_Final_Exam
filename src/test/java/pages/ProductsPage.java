@@ -9,6 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.testng.Assert;
+import org.testng.asserts.SoftAssert;
 
 import java.time.Duration;
 import java.util.Collections;
@@ -16,9 +17,6 @@ import java.util.Collections;
 public class ProductsPage {
     protected WebDriver driver;
     private static final String ADD_TO_CART_LOCATOR = "//button[@id='add-to-cart-sauce-labs-%s']";
-
-    @FindBy(className = "shopping_cart_link")
-    private WebElement shoppingCartLink;
 
     @FindBy (className = "shopping_cart_badge")
     private WebElement shoppingCartCounter;
@@ -54,9 +52,10 @@ public class ProductsPage {
     public int getItemsInTheCart(){
 
         return Integer.parseInt(shoppingCartCounter.getText());
+
     }
 
-    public ProductsPage Checkout(){
+    public CartPage MoveToCheckoutPage(){
 
         FluentWait fluentWait = new FluentWait(driver)
                 .withTimeout(Duration.ofSeconds(20))
@@ -66,6 +65,6 @@ public class ProductsPage {
         fluentWait.until(ExpectedConditions.elementToBeClickable(shoppingCart));
         shoppingCart.click();
 
-        return new ProductsPage(driver);
+        return new CartPage(driver);
     }
 }

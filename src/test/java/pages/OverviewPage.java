@@ -15,23 +15,23 @@ public class OverviewPage {
     protected WebDriver driver;
 
     @FindBy(css = "[id=finish]")
-    private WebElement submitBtn;
+    private WebElement finishBtn;
 
     public OverviewPage(WebDriver driver){
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
 
-    public OverviewPage Checkout(){
+    public CompleteOrderPage Checkout(){
 
         FluentWait fluentWait = new FluentWait(driver)
                 .withTimeout(Duration.ofSeconds(20))
                 .pollingEvery(Duration.ofSeconds(2)) //how often it will be checked for the presence of the element
                 .ignoreAll(Collections.singleton(NoSuchElementException.class));
 
-        fluentWait.until(ExpectedConditions.elementToBeClickable(submitBtn));
-        submitBtn.click();
+        fluentWait.until(ExpectedConditions.elementToBeClickable(finishBtn));
+        finishBtn.click();
 
-        return new OverviewPage(driver);
+        return new CompleteOrderPage(driver);
     }
 }

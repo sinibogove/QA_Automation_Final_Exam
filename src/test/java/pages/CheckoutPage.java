@@ -31,7 +31,7 @@ public class CheckoutPage {
         PageFactory.initElements(driver, this);
     }
 
-    public CheckoutPage Checkout(){
+    public OverviewPage Checkout(){
 
         FluentWait fluentWait = new FluentWait(driver)
                 .withTimeout(Duration.ofSeconds(20))
@@ -40,19 +40,19 @@ public class CheckoutPage {
 
         fluentWait.until(ExpectedConditions.elementToBeClickable(firstName));
         firstName.click();
-        firstName.sendKeys("Vesselin");
+        firstName.sendKeys("Vladimir");
 
         fluentWait.until(ExpectedConditions.elementToBeClickable(lastName));
         lastName.click();
-        lastName.sendKeys("Stoyanov");
+        lastName.sendKeys("Rangelov");
 
         fluentWait.until(ExpectedConditions.elementToBeClickable(postalCode));
         postalCode.click();
-        postalCode.sendKeys("1750");
+        postalCode.sendKeys("1000");
 
         fluentWait.until(ExpectedConditions.elementToBeClickable(submitBtn));
         submitBtn.click();
 
-        return new CheckoutPage(driver);
+        return new OverviewPage(driver);
     }
 }

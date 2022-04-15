@@ -27,7 +27,7 @@ public class CompleteOrderPage {
 
         FluentWait fluentWait = new FluentWait(driver)
                 .withTimeout(Duration.ofSeconds(20))
-                .pollingEvery(Duration.ofSeconds(2)) //how often it will be checked for the presence of the element
+                .pollingEvery(Duration.ofSeconds(2))
                 .ignoreAll(Collections.singleton(NoSuchElementException.class));
 
         fluentWait.until(ExpectedConditions.elementToBeClickable(thanksMessage));
