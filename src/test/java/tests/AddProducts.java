@@ -5,7 +5,6 @@ import com.opencsv.exceptions.CsvException;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
 import pages.LoginPage;
 import pages.ProductsPage;
 import utils.CsvHelper;
@@ -14,12 +13,12 @@ import java.io.IOException;
 
 public class AddProducts extends TestUtils {
 
-    @DataProvider(name = "products")
+    @DataProvider(name = "Products")
     public static Object[][] readUsersFromCsvFile() throws IOException, CsvException {
-        return CsvHelper.readCsvFile("src/test/resources/products.csv");
+        return CsvHelper.readCsvFile("src/test/resources/Products.csv");
     }
 
-    @Test(dataProvider = "products")
+    @Test(dataProvider = "Products")
     public void AddProductsIntoShoppingCart(String userName, String password, String product1, String product2) {
 
         LoginPage loginPage = new LoginPage(driver);
@@ -30,6 +29,6 @@ public class AddProducts extends TestUtils {
         productsPage.getItemsInTheCart();
 
         Assert.assertEquals(productsPage.getItemsInTheCart(), 2,
-                ("Because we have added two item in the cart."));
+                ("Because we have to add two products in the cart."));
     }
 }

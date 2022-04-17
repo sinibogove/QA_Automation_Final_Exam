@@ -9,9 +9,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.testng.Assert;
 
-import java.time.Duration;
-import java.util.Collections;
-
 public class CompleteOrderPage {
     protected WebDriver driver;
 
@@ -22,15 +19,7 @@ public class CompleteOrderPage {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
-
-    public void thanksMessage (){
-
-        FluentWait fluentWait = new FluentWait(driver)
-                .withTimeout(Duration.ofSeconds(20))
-                .pollingEvery(Duration.ofSeconds(2))
-                .ignoreAll(Collections.singleton(NoSuchElementException.class));
-
-        fluentWait.until(ExpectedConditions.elementToBeClickable(thanksMessage));
+    public void displayThankYouForYourOrderMessage (){
         Assert.assertTrue(thanksMessage.isDisplayed());
     }
 }
