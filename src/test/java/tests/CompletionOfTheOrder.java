@@ -15,7 +15,8 @@ public class CompletionOfTheOrder extends TestUtils {
         return CsvHelper.readCsvFile("src/test/resources/clientData.csv");
     }
     @Test(dataProvider = "clientData")
-    public void completeTheOrder(String userName, String password, String product1, String product2, String firstName, String lastName, String postCode){
+    public void completeTheOrder(String userName, String password, String product1, String product2,
+                                 String firstName, String lastName, String postCode){
 
         LoginPage loginPage = new LoginPage(driver);
         ProductsPage productsPage = loginPage.login(userName, password);
