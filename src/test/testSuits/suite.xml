@@ -1,0 +1,26 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite thread-count="4" verbose="1" name="QA_Automation_Final_Exam"
+       annotations="JDK" parallel="tests">
+
+    <test name="SuccessfulLogin">
+        <classes>
+            <class name="tests.SuccessfulLogin"/>
+        </classes>
+    </test>
+    <test name="UnsuccessfulLogin">
+        <classes>
+            <class name="tests.UnsuccessfulLogin"/>
+        </classes>
+    </test>
+    <test name="CompletionOfTheOrder">
+        <classes>
+            <class name="tests.CompletionOfTheOrder"/>
+        </classes>
+    </test>
+    <test name="AddProducts">
+        <classes>
+            <class name="tests.AddProducts"/>
+        </classes>
+    </test>
+</suite>
