@@ -53,17 +53,5 @@ public class YourDataInfoPage {
         submitBtn.click();
 
         return new CheckoutOverviewPage(driver);
-
     }
-       // public CheckoutOverviewPage continueToOverviewPage (){
-
-       // FluentWait fluentWait = new FluentWait(driver)
-      //              .withTimeout(Duration.ofSeconds(20))
-       //             .pollingEvery(Duration.ofSeconds(2))
-        //            .ignoreAll(Collections.singleton(NoSuchElementException.class));
-
-      //  fluentWait.until(ExpectedConditions.elementToBeClickable(submitBtn));
-      //  submitBtn.click();
-
-      //  return new CheckoutOverviewPage(driver);
-    }
+}
